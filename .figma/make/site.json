@@ -1,0 +1,10 @@
+{
+  "description": "Discover a premium eCommerce platform for mobile accessories and screen protection, offering a seamless shopping experience with extensive product categories and secure checkout.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
