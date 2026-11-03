@@ -1,39 +1,39 @@
 export interface Product {
-  id: string;
+  id: string
   /** Amazon.in ASIN for the NEWorld eStore listing */
-  asin: string;
-  name: string;
-  brand: string;
-  category: string;
-  subcategory: string;
-  price: number;
-  originalPrice: number;
-  discount: number;
+  asin: string
+  name: string
+  brand: string
+  category: string
+  subcategory: string
+  price: number
+  originalPrice: number
+  discount: number
   /** Amazon.in rating — only included for listings rated 4.0 or higher */
-  rating?: number;
-  reviewCount?: number;
+  rating?: number
+  reviewCount?: number
   /** Only set when Amazon shows a low-stock notice */
-  stock?: number;
-  image: string;
-  images: string[];
-  compatibility: string[];
-  description: string;
-  features: string[];
-  badge?: string;
-  isNew?: boolean;
-  isBestseller?: boolean;
-  isDeal?: boolean;
+  stock?: number
+  image: string
+  images: string[]
+  compatibility: string[]
+  description: string
+  features: string[]
+  badge?: string
+  isNew?: boolean
+  isBestseller?: boolean
+  isDeal?: boolean
 }
 
 export interface Category {
-  id: string;
-  name: string;
-  slug: string;
-  icon: string;
-  color: string;
-  image: string;
-  productCount: number;
-  subcategories: string[];
+  id: string
+  name: string
+  slug: string
+  icon: string
+  color: string
+  image: string
+  productCount: number
+  subcategories: string[]
 }
 
 export const categories: Category[] = [
@@ -43,7 +43,8 @@ export const categories: Category[] = [
     slug: "tempered-glass",
     icon: "🛡️",
     color: "from-cyan-500 to-blue-600",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop&auto=format",
     productCount: 142,
     subcategories: ["OnePlus", "Samsung", "iPhone", "Pixel", "Nothing Phone"],
   },
@@ -53,7 +54,8 @@ export const categories: Category[] = [
     slug: "hydrogel-film",
     icon: "💧",
     color: "from-violet-500 to-purple-700",
-    image: "https://images.unsplash.com/photo-1601972599748-4d7e1dd62cc0?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1601972599748-4d7e1dd62cc0?w=400&h=400&fit=crop&auto=format",
     productCount: 98,
     subcategories: ["OnePlus", "Samsung", "Pixel", "Vivo", "Oppo"],
   },
@@ -63,9 +65,15 @@ export const categories: Category[] = [
     slug: "watch-protectors",
     icon: "⌚",
     color: "from-rose-500 to-pink-700",
-    image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop&auto=format",
     productCount: 56,
-    subcategories: ["Apple Watch", "Mi Watch", "OnePlus Watch", "Samsung Watch"],
+    subcategories: [
+      "Apple Watch",
+      "Mi Watch",
+      "OnePlus Watch",
+      "Samsung Watch",
+    ],
   },
   {
     id: "4",
@@ -73,7 +81,8 @@ export const categories: Category[] = [
     slug: "phone-cases",
     icon: "📱",
     color: "from-amber-500 to-orange-600",
-    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&auto=format",
     productCount: 204,
     subcategories: ["XUNDD Beetle Series", "Tronzo Hard TPU"],
   },
@@ -83,9 +92,16 @@ export const categories: Category[] = [
     slug: "accessories",
     icon: "🔌",
     color: "from-green-500 to-teal-600",
-    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=400&fit=crop&auto=format",
     productCount: 178,
-    subcategories: ["Power Banks", "Charger & Cable Protectors", "Car Accessories", "Must Haves", "Maintenance"],
+    subcategories: [
+      "Power Banks",
+      "Charger & Cable Protectors",
+      "Car Accessories",
+      "Must Haves",
+      "Maintenance",
+    ],
   },
   {
     id: "6",
@@ -93,7 +109,8 @@ export const categories: Category[] = [
     slug: "refurbished",
     icon: "♻️",
     color: "from-lime-500 to-green-600",
-    image: "https://images.unsplash.com/photo-1510016174641-b578bf2b6d48?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1510016174641-b578bf2b6d48?w=400&h=400&fit=crop&auto=format",
     productCount: 32,
     subcategories: ["Refurbished Items", "Freebies"],
   },
@@ -103,672 +120,597 @@ export const categories: Category[] = [
     slug: "custom-cut",
     icon: "✂️",
     color: "from-sky-500 to-indigo-600",
-    image: "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop&auto=format",
     productCount: 45,
     subcategories: ["Phone Screen Protector", "Phone Back Protector"],
   },
-];
+]
 
 export const products: Product[] = [
   {
-    "id": "B08GTTRSNM",
-    "asin": "B08GTTRSNM",
-    "name": "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming (Black, 1 Pair)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Must Haves",
-    "price": 50,
-    "originalPrice": 399,
-    "discount": 87,
-    "image": "/products/B08GTTRSNM.jpg",
-    "images": [
-      "/products/B08GTTRSNM.jpg"
-    ],
-    "compatibility": [
-      "Universal"
-    ],
-    "description": "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming with Sensitive Touch and Thin Breathable Material (Black) (1 Pair)",
-    "features": [
-      "Sensitive Touch",
-      "Thin Breathable Material",
-      "1 Pair"
-    ],
-    "badge": "87% OFF",
-    "isBestseller": true
+    id: "B08GTTRSNM",
+    asin: "B08GTTRSNM",
+    name: "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming (Black, 1 Pair)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Must Haves",
+    price: 50,
+    originalPrice: 399,
+    discount: 87,
+    image: "/products/B08GTTRSNM.jpg",
+    images: ["/products/B08GTTRSNM.jpg"],
+    compatibility: ["Universal"],
+    description:
+      "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming with Sensitive Touch and Thin Breathable Material (Black) (1 Pair)",
+    features: ["Sensitive Touch", "Thin Breathable Material", "1 Pair"],
+    badge: "87% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B08PPPWN2Z",
-    "asin": "B08PPPWN2Z",
-    "name": "NEWorld Tempered Glass Screen Protector for iPhone SE 2022 / SE 2020 / 8 / 7",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "iPhone",
-    "price": 129,
-    "originalPrice": 999,
-    "discount": 87,
-    "image": "/products/B08PPPWN2Z.jpg",
-    "images": [
-      "/products/B08PPPWN2Z.jpg"
-    ],
-    "compatibility": [
-      "iPhone SE 2022",
-      "iPhone SE 2020",
-      "iPhone 8",
-      "iPhone 7"
-    ],
-    "description": "NEWorld Tempered Glass Screen Protector for iPhone SE 2022 & SE 2020 | iPhone 8 & iPhone 7 With Edge to Edge Full Screen Coverage (Black)",
-    "features": [
-      "Edge to Edge Full Screen Coverage",
-      "Black Border"
-    ],
-    "badge": "87% OFF",
-    "isBestseller": true
+    id: "B08PPPWN2Z",
+    asin: "B08PPPWN2Z",
+    name: "NEWorld Tempered Glass Screen Protector for iPhone SE 2022 / SE 2020 / 8 / 7",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "iPhone",
+    price: 129,
+    originalPrice: 999,
+    discount: 87,
+    image: "/products/B08PPPWN2Z.jpg",
+    images: ["/products/B08PPPWN2Z.jpg"],
+    compatibility: ["iPhone SE 2022", "iPhone SE 2020", "iPhone 8", "iPhone 7"],
+    description:
+      "NEWorld Tempered Glass Screen Protector for iPhone SE 2022 & SE 2020 | iPhone 8 & iPhone 7 With Edge to Edge Full Screen Coverage (Black)",
+    features: ["Edge to Edge Full Screen Coverage", "Black Border"],
+    badge: "87% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B0GJ6Y1YGS",
-    "asin": "B0GJ6Y1YGS",
-    "name": "NEWorld Tempered Glass Screen Protector for OnePlus 15R / Nord 5 / Oppo Reno14 Pro",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "OnePlus",
-    "price": 199,
-    "originalPrice": 999,
-    "discount": 80,
-    "rating": 4.0,
-    "reviewCount": 14,
-    "image": "/products/B0GJ6Y1YGS.jpg",
-    "images": [
-      "/products/B0GJ6Y1YGS.jpg"
-    ],
-    "compatibility": [
-      "OnePlus 15R",
-      "OnePlus Nord 5",
-      "Oppo Reno14 Pro"
-    ],
-    "description": "NEWorld Tempered Glass Screen Protector for OnePlus 15R | Nord 5 & Oppo Reno14 Pro with Edge to Edge Full Screen Coverage (Black)",
-    "features": [
-      "Edge to Edge Full Screen Coverage",
-      "Black Border"
-    ],
-    "badge": "80% OFF",
-    "isBestseller": true
+    id: "B0GJ6Y1YGS",
+    asin: "B0GJ6Y1YGS",
+    name: "NEWorld Tempered Glass Screen Protector for OnePlus 15R / Nord 5 / Oppo Reno14 Pro",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "OnePlus",
+    price: 199,
+    originalPrice: 999,
+    discount: 80,
+    rating: 4.0,
+    reviewCount: 14,
+    image: "/products/B0GJ6Y1YGS.jpg",
+    images: ["/products/B0GJ6Y1YGS.jpg"],
+    compatibility: ["OnePlus 15R", "OnePlus Nord 5", "Oppo Reno14 Pro"],
+    description:
+      "NEWorld Tempered Glass Screen Protector for OnePlus 15R | Nord 5 & Oppo Reno14 Pro with Edge to Edge Full Screen Coverage (Black)",
+    features: ["Edge to Edge Full Screen Coverage", "Black Border"],
+    badge: "80% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B0G4NF8351",
-    "asin": "B0G4NF8351",
-    "name": "NEWorld Hydrogel Film Full Body & Camera Bump Protector for iPhone Air (Frosted Matte)",
-    "brand": "NEWorld",
-    "category": "hydrogel-film",
-    "subcategory": "iPhone",
-    "price": 249,
-    "originalPrice": 1499,
-    "discount": 83,
-    "image": "/products/B0G4NF8351.jpg",
-    "images": [
-      "/products/B0G4NF8351.jpg"
-    ],
-    "compatibility": [
-      "iPhone Air"
-    ],
-    "description": "NEWorld Hydrogel Film Phone Full Body & Camera Bump Protector for iPhone Air Frosted Matte with Installation Kit Transparent",
-    "features": [
+    id: "B0G4NF8351",
+    asin: "B0G4NF8351",
+    name: "NEWorld Hydrogel Film Full Body & Camera Bump Protector for iPhone Air (Frosted Matte)",
+    brand: "NEWorld",
+    category: "hydrogel-film",
+    subcategory: "iPhone",
+    price: 249,
+    originalPrice: 1499,
+    discount: 83,
+    image: "/products/B0G4NF8351.jpg",
+    images: ["/products/B0G4NF8351.jpg"],
+    compatibility: ["iPhone Air"],
+    description:
+      "NEWorld Hydrogel Film Phone Full Body & Camera Bump Protector for iPhone Air Frosted Matte with Installation Kit Transparent",
+    features: [
       "Full Body Coverage",
       "Camera Bump Protection",
       "Frosted Matte Finish",
       "Installation Kit Included",
-      "Transparent"
+      "Transparent",
     ],
-    "badge": "83% OFF",
-    "isBestseller": true
+    badge: "83% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B0CS9MP28J",
-    "asin": "B0CS9MP28J",
-    "name": "NEWorld Tempered Glass Screen Protector for Samsung Galaxy S25 & S24",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Samsung",
-    "price": 283,
-    "originalPrice": 999,
-    "discount": 72,
-    "image": "/products/B0CS9MP28J.jpg",
-    "images": [
-      "/products/B0CS9MP28J.jpg"
-    ],
-    "compatibility": [
-      "Samsung Galaxy S25",
-      "Samsung Galaxy S24"
-    ],
-    "description": "NEWorld Tempered Glass Screen protector for Samsung Galaxy S25 & S24 with Edge to Edge coverage & Installation Kit (Black)",
-    "features": [
+    id: "B0CS9MP28J",
+    asin: "B0CS9MP28J",
+    name: "NEWorld Tempered Glass Screen Protector for Samsung Galaxy S25 & S24",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Samsung",
+    price: 283,
+    originalPrice: 999,
+    discount: 72,
+    image: "/products/B0CS9MP28J.jpg",
+    images: ["/products/B0CS9MP28J.jpg"],
+    compatibility: ["Samsung Galaxy S25", "Samsung Galaxy S24"],
+    description:
+      "NEWorld Tempered Glass Screen protector for Samsung Galaxy S25 & S24 with Edge to Edge coverage & Installation Kit (Black)",
+    features: [
       "Edge to Edge Coverage",
       "Installation Kit Included",
-      "Black Border"
+      "Black Border",
     ],
-    "badge": "72% OFF",
-    "isBestseller": true
+    badge: "72% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B0BFFVBYWS",
-    "asin": "B0BFFVBYWS",
-    "name": "NEWorld 9H Camera Glass Protector for iPhone 13 & 13 mini (Black)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 149,
-    "originalPrice": 999,
-    "discount": 85,
-    "rating": 4.0,
-    "reviewCount": 1,
-    "image": "/products/B0BFFVBYWS.jpg",
-    "images": [
-      "/products/B0BFFVBYWS.jpg"
-    ],
-    "compatibility": [
-      "iPhone 13",
-      "iPhone 13 mini"
-    ],
-    "description": "NEWorld 9H Camera Glass Protector for iPhone 13 & 13 mini (Pack Of 1) - Black",
-    "features": [
-      "9H Hardness",
-      "Pack of 1",
-      "Black"
-    ],
-    "badge": "85% OFF",
-    "isBestseller": true
+    id: "B0BFFVBYWS",
+    asin: "B0BFFVBYWS",
+    name: "NEWorld 9H Camera Glass Protector for iPhone 13 & 13 mini (Black)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 149,
+    originalPrice: 999,
+    discount: 85,
+    rating: 4.0,
+    reviewCount: 1,
+    image: "/products/B0BFFVBYWS.jpg",
+    images: ["/products/B0BFFVBYWS.jpg"],
+    compatibility: ["iPhone 13", "iPhone 13 mini"],
+    description:
+      "NEWorld 9H Camera Glass Protector for iPhone 13 & 13 mini (Pack Of 1) - Black",
+    features: ["9H Hardness", "Pack of 1", "Black"],
+    badge: "85% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B0BDVTH7Y5",
-    "asin": "B0BDVTH7Y5",
-    "name": "NEWorld Tempered Glass Screen Protector for iPhone 14 Pro Max",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "iPhone",
-    "price": 199,
-    "originalPrice": 999,
-    "discount": 80,
-    "image": "/products/B0BDVTH7Y5.jpg",
-    "images": [
-      "/products/B0BDVTH7Y5.jpg"
-    ],
-    "compatibility": [
-      "iPhone 14 Pro Max"
-    ],
-    "description": "NEWorld Tempered Glass Screen Protector for iPhone 14 Pro Max With Edge to Edge Full Screen Coverage (Black)",
-    "features": [
-      "Edge to Edge Full Screen Coverage",
-      "Black Border"
-    ],
-    "badge": "80% OFF",
-    "isBestseller": true
+    id: "B0BDVTH7Y5",
+    asin: "B0BDVTH7Y5",
+    name: "NEWorld Tempered Glass Screen Protector for iPhone 14 Pro Max",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "iPhone",
+    price: 199,
+    originalPrice: 999,
+    discount: 80,
+    image: "/products/B0BDVTH7Y5.jpg",
+    images: ["/products/B0BDVTH7Y5.jpg"],
+    compatibility: ["iPhone 14 Pro Max"],
+    description:
+      "NEWorld Tempered Glass Screen Protector for iPhone 14 Pro Max With Edge to Edge Full Screen Coverage (Black)",
+    features: ["Edge to Edge Full Screen Coverage", "Black Border"],
+    badge: "80% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B08HZ21H7G",
-    "asin": "B08HZ21H7G",
-    "name": "NEWorld Tempered Glass Screen Protector for Samsung Galaxy A52 / M31s / A51",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Samsung",
-    "price": 199,
-    "originalPrice": 999,
-    "discount": 80,
-    "image": "/products/B08HZ21H7G.jpg",
-    "images": [
-      "/products/B08HZ21H7G.jpg"
-    ],
-    "compatibility": [
+    id: "B08HZ21H7G",
+    asin: "B08HZ21H7G",
+    name: "NEWorld Tempered Glass Screen Protector for Samsung Galaxy A52 / M31s / A51",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Samsung",
+    price: 199,
+    originalPrice: 999,
+    discount: 80,
+    image: "/products/B08HZ21H7G.jpg",
+    images: ["/products/B08HZ21H7G.jpg"],
+    compatibility: [
       "Samsung Galaxy A52",
       "Samsung Galaxy M31s",
-      "Samsung Galaxy A51"
+      "Samsung Galaxy A51",
     ],
-    "description": "NEWorld Tempered Glass Screen Protector for Samsung Galaxy A52 | M31s & A51 with Edge to Edge Full Screen Coverage (Black)",
-    "features": [
-      "Edge to Edge Full Screen Coverage",
-      "Black Border"
-    ],
-    "badge": "80% OFF",
-    "isBestseller": true
+    description:
+      "NEWorld Tempered Glass Screen Protector for Samsung Galaxy A52 | M31s & A51 with Edge to Edge Full Screen Coverage (Black)",
+    features: ["Edge to Edge Full Screen Coverage", "Black Border"],
+    badge: "80% OFF",
+    isBestseller: true,
   },
   {
-    "id": "B08GV8D5XD",
-    "asin": "B08GV8D5XD",
-    "name": "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming (Black, 2 Pair)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Must Haves",
-    "price": 69,
-    "originalPrice": 799,
-    "discount": 91,
-    "image": "/products/B08GV8D5XD.jpg",
-    "images": [
-      "/products/B08GV8D5XD.jpg"
-    ],
-    "compatibility": [
-      "Universal"
-    ],
-    "description": "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming with Sensitive Touch and Thin Breathable Material (Black) (2 Pair)",
-    "features": [
-      "Sensitive Touch",
-      "Thin Breathable Material",
-      "2 Pairs"
-    ],
-    "badge": "91% OFF",
-    "isDeal": true
+    id: "B08GV8D5XD",
+    asin: "B08GV8D5XD",
+    name: "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming (Black, 2 Pair)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Must Haves",
+    price: 69,
+    originalPrice: 799,
+    discount: 91,
+    image: "/products/B08GV8D5XD.jpg",
+    images: ["/products/B08GV8D5XD.jpg"],
+    compatibility: ["Universal"],
+    description:
+      "NEWorld Wasp Feelers Finger Sleeves for PUBG Mobile Gaming with Sensitive Touch and Thin Breathable Material (Black) (2 Pair)",
+    features: ["Sensitive Touch", "Thin Breathable Material", "2 Pairs"],
+    badge: "91% OFF",
+    isDeal: true,
   },
   {
-    "id": "B0BLM6ZFD7",
-    "asin": "B0BLM6ZFD7",
-    "name": "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 20)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Maintenance",
-    "price": 129,
-    "originalPrice": 199,
-    "discount": 35,
-    "image": "/products/B0BLM6ZFD7.jpg",
-    "images": [
-      "/products/B0BLM6ZFD7.jpg"
-    ],
-    "compatibility": [
+    id: "B0BLM6ZFD7",
+    asin: "B0BLM6ZFD7",
+    name: "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 20)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Maintenance",
+    price: 129,
+    originalPrice: 199,
+    discount: 35,
+    image: "/products/B0BLM6ZFD7.jpg",
+    images: ["/products/B0BLM6ZFD7.jpg"],
+    compatibility: [
       "Mobile Phones",
       "Tablets",
       "Camera Lenses",
       "LCD/LED Screens",
       "Laptops",
-      "Smart Watches"
+      "Smart Watches",
     ],
-    "description": "NEWorld [Pack of 20] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
-    "features": [
-      "Wet & Dry Wipes",
-      "Pack of 20"
-    ],
-    "badge": "35% OFF",
-    "isDeal": true
+    description:
+      "NEWorld [Pack of 20] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
+    features: ["Wet & Dry Wipes", "Pack of 20"],
+    badge: "35% OFF",
+    isDeal: true,
   },
   {
-    "id": "B0HB724BQK",
-    "asin": "B0HB724BQK",
-    "name": "NEWorld One Minute Series Curved Glass Protector for Samsung Galaxy",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Samsung",
-    "price": 799,
-    "originalPrice": 1999,
-    "discount": 60,
-    "image": "/products/B0HB724BQK.jpg",
-    "images": [
-      "/products/B0HB724BQK.jpg"
-    ],
-    "compatibility": [
-      "Samsung Galaxy (curved display models)"
-    ],
-    "description": "NEWorld One Minute Series Curved Glass Protector for Samsung Galaxy* | Premium Full Glue Tempered Glass With Ultrasonic Fingerprint Sensor Compatible, Edge to Edge Coverage And Installation Kit",
-    "features": [
+    id: "B0HB724BQK",
+    asin: "B0HB724BQK",
+    name: "NEWorld One Minute Series Curved Glass Protector for Samsung Galaxy",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Samsung",
+    price: 799,
+    originalPrice: 1999,
+    discount: 60,
+    image: "/products/B0HB724BQK.jpg",
+    images: ["/products/B0HB724BQK.jpg"],
+    compatibility: ["Samsung Galaxy (curved display models)"],
+    description:
+      "NEWorld One Minute Series Curved Glass Protector for Samsung Galaxy* | Premium Full Glue Tempered Glass With Ultrasonic Fingerprint Sensor Compatible, Edge to Edge Coverage And Installation Kit",
+    features: [
       "Full Glue Tempered Glass",
       "Ultrasonic Fingerprint Sensor Compatible",
       "Edge to Edge Coverage",
-      "Installation Kit Included"
+      "Installation Kit Included",
     ],
-    "badge": "60% OFF",
-    "isNew": true
+    badge: "60% OFF",
+    isNew: true,
   },
   {
-    "id": "B0GX9W4Z8Z",
-    "asin": "B0GX9W4Z8Z",
-    "name": "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro (Silver)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 639,
-    "originalPrice": 1999,
-    "discount": 68,
-    "rating": 4.2,
-    "reviewCount": 18,
-    "image": "/products/B0GX9W4Z8Z.jpg",
-    "images": [
-      "/products/B0GX9W4Z8Z.jpg"
-    ],
-    "compatibility": [
-      "iPhone 17 Pro"
-    ],
-    "description": "NEWorld Camera Lens Armor Rings for iPhone 17 Pro | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Silver - Full)",
-    "features": [
+    id: "B0GX9W4Z8Z",
+    asin: "B0GX9W4Z8Z",
+    name: "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro (Silver)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 639,
+    originalPrice: 1999,
+    discount: 68,
+    rating: 4.2,
+    reviewCount: 18,
+    image: "/products/B0GX9W4Z8Z.jpg",
+    images: ["/products/B0GX9W4Z8Z.jpg"],
+    compatibility: ["iPhone 17 Pro"],
+    description:
+      "NEWorld Camera Lens Armor Rings for iPhone 17 Pro | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Silver - Full)",
+    features: [
       "Camera Lens Armor Rings",
       "Easy Installation Frame",
       "Full Coverage",
-      "Silver"
+      "Silver",
     ],
-    "badge": "68% OFF",
-    "isNew": true
+    badge: "68% OFF",
+    isNew: true,
   },
   {
-    "id": "B0DJDR2BKQ",
-    "asin": "B0DJDR2BKQ",
-    "name": "NEWorld XUNDD Series Camera Lens Protector for iPhone 16 Pro & 16 Pro Max (Clear)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 509,
-    "originalPrice": 1499,
-    "discount": 66,
-    "image": "/products/B0DJDR2BKQ.jpg",
-    "images": [
-      "/products/B0DJDR2BKQ.jpg"
-    ],
-    "compatibility": [
-      "iPhone 16 Pro",
-      "iPhone 16 Pro Max"
-    ],
-    "description": "NEWorld XUNDD Series Camera Lens Protector for iPhone 16 Pro & 16 Pro Max | Premium Camera Glass Protectors With Easy Installation Frame (1 Set) (Clear | Transparent)",
-    "features": [
-      "Easy Installation Frame",
-      "1 Set",
-      "Clear / Transparent"
-    ],
-    "badge": "66% OFF",
-    "isNew": true
+    id: "B0DJDR2BKQ",
+    asin: "B0DJDR2BKQ",
+    name: "NEWorld XUNDD Series Camera Lens Protector for iPhone 16 Pro & 16 Pro Max (Clear)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 509,
+    originalPrice: 1499,
+    discount: 66,
+    image: "/products/B0DJDR2BKQ.jpg",
+    images: ["/products/B0DJDR2BKQ.jpg"],
+    compatibility: ["iPhone 16 Pro", "iPhone 16 Pro Max"],
+    description:
+      "NEWorld XUNDD Series Camera Lens Protector for iPhone 16 Pro & 16 Pro Max | Premium Camera Glass Protectors With Easy Installation Frame (1 Set) (Clear | Transparent)",
+    features: ["Easy Installation Frame", "1 Set", "Clear / Transparent"],
+    badge: "66% OFF",
+    isNew: true,
   },
   {
-    "id": "B0BLM7FLXV",
-    "asin": "B0BLM7FLXV",
-    "name": "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 10)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Maintenance",
-    "price": 79,
-    "originalPrice": 149,
-    "discount": 47,
-    "image": "/products/B0BLM7FLXV.jpg",
-    "images": [
-      "/products/B0BLM7FLXV.jpg"
-    ],
-    "compatibility": [
+    id: "B0BLM7FLXV",
+    asin: "B0BLM7FLXV",
+    name: "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 10)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Maintenance",
+    price: 79,
+    originalPrice: 149,
+    discount: 47,
+    image: "/products/B0BLM7FLXV.jpg",
+    images: ["/products/B0BLM7FLXV.jpg"],
+    compatibility: [
       "Mobile Phones",
       "Tablets",
       "Camera Lenses",
       "LCD/LED Screens",
       "Laptops",
-      "Smart Watches"
+      "Smart Watches",
     ],
-    "description": "NEWorld [Pack of 10] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
-    "features": [
-      "Wet & Dry Wipes",
-      "Pack of 10"
-    ],
-    "badge": "47% OFF",
-    "isNew": true
+    description:
+      "NEWorld [Pack of 10] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
+    features: ["Wet & Dry Wipes", "Pack of 10"],
+    badge: "47% OFF",
+    isNew: true,
   },
   {
-    "id": "B09V35HJV6",
-    "asin": "B09V35HJV6",
-    "name": "NEWorld Tempered Glass Screen Protector for OnePlus Nord CE 2",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "OnePlus",
-    "price": 149,
-    "originalPrice": 999,
-    "discount": 85,
-    "image": "/products/B09V35HJV6.jpg",
-    "images": [
-      "/products/B09V35HJV6.jpg"
-    ],
-    "compatibility": [
-      "OnePlus Nord CE 2"
-    ],
-    "description": "NEWorld Tempered Glass Screen Protector for OnePlus Nord CE 2 with Edge to Edge Full Screen Coverage (Black)",
-    "features": [
-      "Edge to Edge Full Screen Coverage",
-      "Black Border"
-    ],
-    "badge": "85% OFF",
-    "isNew": true
+    id: "B09V35HJV6",
+    asin: "B09V35HJV6",
+    name: "NEWorld Tempered Glass Screen Protector for OnePlus Nord CE 2",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "OnePlus",
+    price: 149,
+    originalPrice: 999,
+    discount: 85,
+    image: "/products/B09V35HJV6.jpg",
+    images: ["/products/B09V35HJV6.jpg"],
+    compatibility: ["OnePlus Nord CE 2"],
+    description:
+      "NEWorld Tempered Glass Screen Protector for OnePlus Nord CE 2 with Edge to Edge Full Screen Coverage (Black)",
+    features: ["Edge to Edge Full Screen Coverage", "Black Border"],
+    badge: "85% OFF",
+    isNew: true,
   },
   {
-    "id": "B08X4VK23G",
-    "asin": "B08X4VK23G",
-    "name": "NEWorld Translucent PC Back Case for Samsung Galaxy S21 Plus (Green)",
-    "brand": "NEWorld",
-    "category": "phone-cases",
-    "subcategory": "Samsung",
-    "price": 499,
-    "originalPrice": 1499,
-    "discount": 67,
-    "image": "/products/B08X4VK23G.jpg",
-    "images": [
-      "/products/B08X4VK23G.jpg"
-    ],
-    "compatibility": [
-      "Samsung Galaxy S21 Plus"
-    ],
-    "description": "NEWorld Translucent PC Back Case for Samsung Galaxy S21 Plus with Shock Absorption & Raised Bezel (Green)",
-    "features": [
+    id: "B08X4VK23G",
+    asin: "B08X4VK23G",
+    name: "NEWorld Translucent PC Back Case for Samsung Galaxy S21 Plus (Green)",
+    brand: "NEWorld",
+    category: "phone-cases",
+    subcategory: "Samsung",
+    price: 499,
+    originalPrice: 1499,
+    discount: 67,
+    image: "/products/B08X4VK23G.jpg",
+    images: ["/products/B08X4VK23G.jpg"],
+    compatibility: ["Samsung Galaxy S21 Plus"],
+    description:
+      "NEWorld Translucent PC Back Case for Samsung Galaxy S21 Plus with Shock Absorption & Raised Bezel (Green)",
+    features: [
       "Translucent PC Back",
       "Shock Absorption",
       "Raised Bezel",
-      "Green"
+      "Green",
     ],
-    "badge": "67% OFF",
-    "isNew": true
+    badge: "67% OFF",
+    isNew: true,
   },
   {
-    "id": "B08B4JR88J",
-    "asin": "B08B4JR88J",
-    "name": "NEWorld Full Arm Sleeves with Thumb Hole for Men & Women (Pink, 1 Pair)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Must Haves",
-    "price": 169,
-    "originalPrice": 399,
-    "discount": 58,
-    "image": "/products/B08B4JR88J.jpg",
-    "images": [
-      "/products/B08B4JR88J.jpg"
-    ],
-    "compatibility": [
-      "Men & Women"
-    ],
-    "description": "NEWorld Full Arm Sleeves for Men & Women with Thumb Hole for Protection Against Sun, Dust & Pollution | 1 Pair (Pink)",
-    "features": [
+    id: "B08B4JR88J",
+    asin: "B08B4JR88J",
+    name: "NEWorld Full Arm Sleeves with Thumb Hole for Men & Women (Pink, 1 Pair)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Must Haves",
+    price: 169,
+    originalPrice: 399,
+    discount: 58,
+    image: "/products/B08B4JR88J.jpg",
+    images: ["/products/B08B4JR88J.jpg"],
+    compatibility: ["Men & Women"],
+    description:
+      "NEWorld Full Arm Sleeves for Men & Women with Thumb Hole for Protection Against Sun, Dust & Pollution | 1 Pair (Pink)",
+    features: [
       "Thumb Hole",
       "Protection Against Sun, Dust & Pollution",
       "1 Pair",
-      "Pink"
+      "Pink",
     ],
-    "badge": "58% OFF",
-    "isNew": true
+    badge: "58% OFF",
+    isNew: true,
   },
   {
-    "id": "B09V5L6VJH",
-    "asin": "B09V5L6VJH",
-    "name": "NEWorld Premium Microfiber Cleaning Cloth, 6 x 7 in (Pack of 4, Multi-Color)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Maintenance",
-    "price": 129,
-    "originalPrice": 349,
-    "discount": 63,
-    "rating": 4.1,
-    "reviewCount": 935,
-    "image": "/products/B09V5L6VJH.jpg",
-    "images": [
-      "/products/B09V5L6VJH.jpg"
-    ],
-    "compatibility": [
+    id: "B09V5L6VJH",
+    asin: "B09V5L6VJH",
+    name: "NEWorld Premium Microfiber Cleaning Cloth, 6 x 7 in (Pack of 4, Multi-Color)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Maintenance",
+    price: 129,
+    originalPrice: 349,
+    discount: 63,
+    rating: 4.1,
+    reviewCount: 935,
+    image: "/products/B09V5L6VJH.jpg",
+    images: ["/products/B09V5L6VJH.jpg"],
+    compatibility: [
       "Mobile Screens",
       "Camera Lenses",
       "Tablets",
       "Monitors",
-      "Sunglasses"
+      "Sunglasses",
     ],
-    "description": "NEWorld Premium Microfiber Cleaning/Polishing Cloth for Mobile Screen, Camera Lenses, Tablets, Monitors, Sunglasses and Other Glass Materials (Multi-Color) - 6 x 7 Inches (Pack of 4)",
-    "features": [
-      "Microfiber",
-      "6 x 7 Inches",
-      "Pack of 4",
-      "Multi-Color"
-    ],
-    "badge": "63% OFF",
-    "isDeal": true
+    description:
+      "NEWorld Premium Microfiber Cleaning/Polishing Cloth for Mobile Screen, Camera Lenses, Tablets, Monitors, Sunglasses and Other Glass Materials (Multi-Color) - 6 x 7 Inches (Pack of 4)",
+    features: ["Microfiber", "6 x 7 Inches", "Pack of 4", "Multi-Color"],
+    badge: "63% OFF",
+    isDeal: true,
   },
   {
-    "id": "B0BLM6KL28",
-    "asin": "B0BLM6KL28",
-    "name": "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 50)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Maintenance",
-    "price": 224,
-    "originalPrice": 499,
-    "discount": 55,
-    "image": "/products/B0BLM6KL28.jpg",
-    "images": [
-      "/products/B0BLM6KL28.jpg"
-    ],
-    "compatibility": [
+    id: "B0BLM6KL28",
+    asin: "B0BLM6KL28",
+    name: "NEWorld Premium Wet & Dry Screen Cleaning Wipes (Pack of 50)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Maintenance",
+    price: 224,
+    originalPrice: 499,
+    discount: 55,
+    image: "/products/B0BLM6KL28.jpg",
+    images: ["/products/B0BLM6KL28.jpg"],
+    compatibility: [
       "Mobile Phones",
       "Tablets",
       "Camera Lenses",
       "LCD/LED Screens",
       "Laptops",
-      "Smart Watches"
+      "Smart Watches",
     ],
-    "description": "NEWorld [Pack of 50] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
-    "features": [
-      "Wet & Dry Wipes",
-      "Pack of 50"
-    ],
-    "badge": "55% OFF"
+    description:
+      "NEWorld [Pack of 50] Premium Wet & Dry Wipes for Mobile Phone, Tablet, Camera Lens, LCD LED Screen Laptop, Smart Watch & Other Electronics (MTB Wipes)",
+    features: ["Wet & Dry Wipes", "Pack of 50"],
+    badge: "55% OFF",
   },
   {
-    "id": "B0GX9XB26D",
-    "asin": "B0GX9XB26D",
-    "name": "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Silver)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 639,
-    "originalPrice": 1999,
-    "discount": 68,
-    "rating": 4.2,
-    "reviewCount": 18,
-    "stock": 2,
-    "image": "/products/B0GX9XB26D.jpg",
-    "images": [
-      "/products/B0GX9XB26D.jpg"
-    ],
-    "compatibility": [
-      "iPhone 17 Pro Max"
-    ],
-    "description": "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Silver - Full)",
-    "features": [
+    id: "B0GX9XB26D",
+    asin: "B0GX9XB26D",
+    name: "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Silver)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 639,
+    originalPrice: 1999,
+    discount: 68,
+    rating: 4.2,
+    reviewCount: 18,
+    stock: 2,
+    image: "/products/B0GX9XB26D.jpg",
+    images: ["/products/B0GX9XB26D.jpg"],
+    compatibility: ["iPhone 17 Pro Max"],
+    description:
+      "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Silver - Full)",
+    features: [
       "Camera Lens Armor Rings",
       "Easy Installation Frame",
       "Full Coverage",
-      "Silver"
+      "Silver",
     ],
-    "badge": "68% OFF"
+    badge: "68% OFF",
   },
   {
-    "id": "B0GXB62SLL",
-    "asin": "B0GXB62SLL",
-    "name": "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Cosmic Orange)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 799,
-    "originalPrice": 1999,
-    "discount": 60,
-    "rating": 4.2,
-    "reviewCount": 18,
-    "stock": 2,
-    "image": "/products/B0GXB62SLL.jpg",
-    "images": [
-      "/products/B0GXB62SLL.jpg"
-    ],
-    "compatibility": [
-      "iPhone 17 Pro Max"
-    ],
-    "description": "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Cosmic Orange - Full)",
-    "features": [
+    id: "B0GXB62SLL",
+    asin: "B0GXB62SLL",
+    name: "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Cosmic Orange)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 799,
+    originalPrice: 1999,
+    discount: 60,
+    rating: 4.2,
+    reviewCount: 18,
+    stock: 2,
+    image: "/products/B0GXB62SLL.jpg",
+    images: ["/products/B0GXB62SLL.jpg"],
+    compatibility: ["iPhone 17 Pro Max"],
+    description:
+      "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Cosmic Orange - Full)",
+    features: [
       "Camera Lens Armor Rings",
       "Easy Installation Frame",
       "Full Coverage",
-      "Cosmic Orange"
+      "Cosmic Orange",
     ],
-    "badge": "60% OFF"
+    badge: "60% OFF",
   },
   {
-    "id": "B0GXB949M6",
-    "asin": "B0GXB949M6",
-    "name": "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Deep Blue)",
-    "brand": "NEWorld",
-    "category": "tempered-glass",
-    "subcategory": "Camera Lens Protectors",
-    "price": 639,
-    "originalPrice": 1999,
-    "discount": 68,
-    "rating": 4.2,
-    "reviewCount": 18,
-    "stock": 2,
-    "image": "/products/B0GXB949M6.jpg",
-    "images": [
-      "/products/B0GXB949M6.jpg"
-    ],
-    "compatibility": [
-      "iPhone 17 Pro Max"
-    ],
-    "description": "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Deep Blue - Full)",
-    "features": [
+    id: "B0GXB949M6",
+    asin: "B0GXB949M6",
+    name: "NEWorld Tronzo Series Camera Lens Armor Rings for iPhone 17 Pro Max (Deep Blue)",
+    brand: "NEWorld",
+    category: "tempered-glass",
+    subcategory: "Camera Lens Protectors",
+    price: 639,
+    originalPrice: 1999,
+    discount: 68,
+    rating: 4.2,
+    reviewCount: 18,
+    stock: 2,
+    image: "/products/B0GXB949M6.jpg",
+    images: ["/products/B0GXB949M6.jpg"],
+    compatibility: ["iPhone 17 Pro Max"],
+    description:
+      "NEWorld Camera Lens Armor Rings for iPhone 17 Pro Max | Premium Tronzo Series Camera Glass Protectors With Easy Installation Frame (Deep Blue - Full)",
+    features: [
       "Camera Lens Armor Rings",
       "Easy Installation Frame",
       "Full Coverage",
-      "Deep Blue"
+      "Deep Blue",
     ],
-    "badge": "68% OFF"
+    badge: "68% OFF",
   },
   {
-    "id": "B0HB7JP4CK",
-    "asin": "B0HB7JP4CK",
-    "name": "NEWorld LED Mini COB Keychain Magnetic Flashlight, Type-C Rechargeable (Black)",
-    "brand": "NEWorld",
-    "category": "accessories",
-    "subcategory": "Must Haves",
-    "price": 199,
-    "originalPrice": 999,
-    "discount": 80,
-    "image": "/products/B0HB7JP4CK.jpg",
-    "images": [
-      "/products/B0HB7JP4CK.jpg"
-    ],
-    "compatibility": [
-      "Walking",
-      "Camping"
-    ],
-    "description": "NEWorld LED Mini COB Keychain and Magnetic Flashlight Portable Type-C Rechargeable Light 3 Light Modes with Folding Bracket,for Walking Camping [Black, 1000 Lumen]",
-    "features": [
+    id: "B0HB7JP4CK",
+    asin: "B0HB7JP4CK",
+    name: "NEWorld LED Mini COB Keychain Magnetic Flashlight, Type-C Rechargeable (Black)",
+    brand: "NEWorld",
+    category: "accessories",
+    subcategory: "Must Haves",
+    price: 199,
+    originalPrice: 999,
+    discount: 80,
+    image: "/products/B0HB7JP4CK.jpg",
+    images: ["/products/B0HB7JP4CK.jpg"],
+    compatibility: ["Walking", "Camping"],
+    description:
+      "NEWorld LED Mini COB Keychain and Magnetic Flashlight Portable Type-C Rechargeable Light 3 Light Modes with Folding Bracket,for Walking Camping [Black, 1000 Lumen]",
+    features: [
       "1000 Lumen",
       "Type-C Rechargeable",
       "3 Light Modes",
       "Folding Bracket",
       "Magnetic",
-      "Keychain"
+      "Keychain",
     ],
-    "badge": "80% OFF"
-  }
-];
+    badge: "80% OFF",
+  },
+]
 
-export const amazonUrl = (asin: string) => `https://www.amazon.in/dp/${asin}`;
+export const amazonUrl = (asin: string) => `https://www.amazon.in/dp/${asin}`
 
-// Live product counts per category
-for (const c of categories) c.productCount = products.filter((p) => p.category === c.slug).length;
+// Keep category counts and artwork in sync with the verified Amazon.in catalog.
+for (const c of categories) {
+  const categoryProducts = products.filter((p) => p.category === c.slug)
+  c.productCount = categoryProducts.length
+  if (categoryProducts[0]) c.image = categoryProducts[0].image
+}
 
 /** Seller rating from the NEWorld eStore Amazon.in seller profile (lifetime) */
-export const sellerRating = { rating: 4.2, totalRatings: 129, positivePercent: 84, since: 2020 };
+export const sellerRating = {
+  rating: 4.2,
+  totalRatings: 129,
+  positivePercent: 84,
+  since: 2020,
+}
 
 // Top-rated (4-5 star) seller feedback from the NEWorld eStore Amazon.in seller profile
 export const reviews = [
-  { id: "r1", name: "Shrishti", rating: 5, review: "Excellent", date: "22 Sep 2026", verified: true },
-  { id: "r2", name: "CharanRaj", rating: 4, review: "On time, Great Product for a reasonable price.", date: "15 Feb 2026", verified: true },
-  { id: "r3", name: "Shashank A.", rating: 4, review: "Product is ok. Worth the price. Can recommend to others.", date: "6 Aug 2026", verified: true },
-  { id: "r4", name: "Baiju", rating: 4, review: "Nice", date: "2 Apr 2026", verified: true },
-];
+  {
+    id: "r1",
+    name: "Shrishti",
+    rating: 5,
+    review: "Excellent",
+    date: "22 Sep 2026",
+    verified: true,
+  },
+  {
+    id: "r2",
+    name: "CharanRaj",
+    rating: 4,
+    review: "On time, Great Product for a reasonable price.",
+    date: "15 Feb 2026",
+    verified: true,
+  },
+  {
+    id: "r3",
+    name: "Shashank A.",
+    rating: 4,
+    review: "Product is ok. Worth the price. Can recommend to others.",
+    date: "6 Aug 2026",
+    verified: true,
+  },
+  {
+    id: "r4",
+    name: "Baiju",
+    rating: 4,
+    review: "Nice",
+    date: "2 Apr 2026",
+    verified: true,
+  },
+]

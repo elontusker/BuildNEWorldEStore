@@ -1,46 +1,48 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Play, Shield, Star, Zap } from "lucide-react";
-import { products, sellerRating } from "../data/products";
+import { useEffect, useRef, useState } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { ArrowRight, Play, Shield, Star, Zap } from "lucide-react"
+import { products, sellerRating } from "../data/products"
 
 interface HeroProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: string) => void
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const { scrollY } = useScroll();
+  const heroProduct =
+    products.find((product) => product.asin === "B0GJ6Y1YGS") ?? products[0]
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const { scrollY } = useScroll()
 
-  const y = useTransform(scrollY, [0, 600], [0, 180]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const scale = useTransform(scrollY, [0, 400], [1, 1.08]);
+  const y = useTransform(scrollY, [0, 600], [0, 180])
+  const opacity = useTransform(scrollY, [0, 400], [1, 0])
+  const scale = useTransform(scrollY, [0, 400], [1, 1.08])
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       setMousePos({
         x: (e.clientX / window.innerWidth - 0.5) * 30,
         y: (e.clientY / window.innerHeight - 0.5) * 20,
-      });
-    };
-    window.addEventListener("mousemove", handler);
-    return () => window.removeEventListener("mousemove", handler);
-  }, []);
+      })
+    }
+    window.addEventListener("mousemove", handler)
+    return () => window.removeEventListener("mousemove", handler)
+  }, [])
 
   const stats = [
     { value: `${sellerRating.positivePercent}%`, label: "Positive Feedback" },
     { value: `${products.length}`, label: "Products" },
     { value: `${sellerRating.rating}★`, label: "Seller Rating" },
     { value: `${sellerRating.since}`, label: "Serving Since" },
-  ];
+  ]
 
   return (
-    <div ref={containerRef} className="relative min-h-screen overflow-hidden flex items-center">
+    <div
+      ref={containerRef}
+      className="relative min-h-screen overflow-hidden flex items-center"
+    >
       {/* Background layers */}
-      <motion.div
-        style={{ scale }}
-        className="absolute inset-0 z-0"
-      >
+      <motion.div style={{ scale }} className="absolute inset-0 z-0">
         {/* Video-like gradient background (cinematic) */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#020210] via-[#07070f] to-[#0a0520]" />
 
@@ -53,7 +55,8 @@ export default function Hero({ onNavigate }: HeroProps) {
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-[-20%] left-[20%] w-[800px] h-[800px] rounded-full opacity-30"
           style={{
-            background: "radial-gradient(ellipse, rgba(0,212,255,0.35) 0%, transparent 70%)",
+            background:
+              "radial-gradient(ellipse, rgba(0,212,255,0.35) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -64,7 +67,8 @@ export default function Hero({ onNavigate }: HeroProps) {
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-[-10%] right-[10%] w-[700px] h-[700px] rounded-full opacity-20"
           style={{
-            background: "radial-gradient(ellipse, rgba(99,102,241,0.5) 0%, transparent 70%)",
+            background:
+              "radial-gradient(ellipse, rgba(99,102,241,0.5) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -75,7 +79,8 @@ export default function Hero({ onNavigate }: HeroProps) {
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-[30%] right-[25%] w-[400px] h-[400px] rounded-full opacity-15"
           style={{
-            background: "radial-gradient(ellipse, rgba(255,77,109,0.4) 0%, transparent 70%)",
+            background:
+              "radial-gradient(ellipse, rgba(255,77,109,0.4) 0%, transparent 70%)",
           }}
         />
 
@@ -121,13 +126,17 @@ export default function Hero({ onNavigate }: HeroProps) {
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="w-72 h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-3xl overflow-hidden glass-strong border border-[var(--border)] glow-cyan shadow-[0_40px_120px_rgba(0,0,0,0.7)]">
+            <div className="relative w-72 h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-3xl overflow-hidden bg-white border border-[var(--border)] glow-cyan shadow-[0_40px_120px_rgba(0,0,0,0.7)]">
               <img
-                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=600&fit=crop&auto=format"
-                alt="NEWorld Tempered Glass"
-                className="w-full h-full object-cover"
+                src={heroProduct.image}
+                alt={heroProduct.name}
+                className="w-full h-full object-contain p-7 pb-20"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-5 pb-5 pt-16">
+                <p className="line-clamp-2 text-sm font-display font-600 leading-snug text-white">
+                  {heroProduct.name}
+                </p>
+              </div>
             </div>
 
             {/* Floating badge */}
@@ -137,8 +146,14 @@ export default function Hero({ onNavigate }: HeroProps) {
               className="absolute -top-4 -right-4 glass-strong rounded-2xl px-3 py-2 border border-[var(--primary)] glow-cyan-sm"
             >
               <div className="flex items-center gap-1">
-                <Zap size={14} className="text-[var(--primary)]" fill="currentColor" />
-                <span className="text-xs font-display font-700 text-[var(--primary)]">9H HARDNESS</span>
+                <Zap
+                  size={14}
+                  className="text-[var(--primary)]"
+                  fill="currentColor"
+                />
+                <span className="text-xs font-display font-700 text-[var(--primary)]">
+                  AMAZON.IN LISTING
+                </span>
               </div>
             </motion.div>
 
@@ -150,8 +165,12 @@ export default function Hero({ onNavigate }: HeroProps) {
             >
               <div className="flex items-center gap-1.5">
                 <Star size={14} className="text-yellow-400 fill-yellow-400" />
-                <span className="text-sm font-display font-700 text-[var(--foreground)]">{sellerRating.rating}</span>
-                <span className="text-xs text-[var(--muted-foreground)]">/ {sellerRating.totalRatings} ratings</span>
+                <span className="text-sm font-display font-700 text-[var(--foreground)]">
+                  {sellerRating.rating}
+                </span>
+                <span className="text-xs text-[var(--muted-foreground)]">
+                  / {sellerRating.totalRatings} ratings
+                </span>
               </div>
             </motion.div>
           </motion.div>
@@ -172,7 +191,9 @@ export default function Hero({ onNavigate }: HeroProps) {
             className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 border border-[var(--border)]"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--primary)] badge-live" />
-            <span className="text-xs font-mono text-[var(--muted-foreground)]">FREE SHIPPING ON ORDERS ₹499+</span>
+            <span className="text-xs font-mono text-[var(--muted-foreground)]">
+              FREE SHIPPING ON ORDERS ₹499+
+            </span>
             <Shield size={12} className="text-[var(--primary)]" />
           </motion.div>
 
@@ -195,7 +216,8 @@ export default function Hero({ onNavigate }: HeroProps) {
             transition={{ delay: 0.35, duration: 0.7 }}
             className="text-lg text-[var(--muted-foreground)] mb-10 leading-relaxed max-w-lg"
           >
-            Premium screen protectors, cases, and mobile accessories — engineered for the devices you depend on.
+            Premium screen protectors, cases, and mobile accessories —
+            engineered for the devices you depend on.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -206,7 +228,10 @@ export default function Hero({ onNavigate }: HeroProps) {
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
             <motion.button
-              whileHover={{ scale: 1.03, boxShadow: "0 0 40px rgba(0,212,255,0.4)" }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 40px rgba(0,212,255,0.4)",
+              }}
               whileTap={{ scale: 0.97 }}
               onClick={() => onNavigate("products")}
               className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[var(--primary)] text-black font-display font-700 text-base glow-cyan-sm transition-all duration-200"
@@ -242,8 +267,12 @@ export default function Hero({ onNavigate }: HeroProps) {
                 transition={{ delay: 0.7 + i * 0.08 }}
                 className="flex flex-col"
               >
-                <span className="font-display font-800 text-2xl text-[var(--primary)] text-glow">{stat.value}</span>
-                <span className="text-xs text-[var(--muted-foreground)] mt-0.5">{stat.label}</span>
+                <span className="font-display font-800 text-2xl text-[var(--primary)] text-glow">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-[var(--muted-foreground)] mt-0.5">
+                  {stat.label}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -257,7 +286,9 @@ export default function Hero({ onNavigate }: HeroProps) {
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-[var(--muted-foreground)] font-mono">SCROLL</span>
+        <span className="text-xs text-[var(--muted-foreground)] font-mono">
+          SCROLL
+        </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
@@ -265,5 +296,5 @@ export default function Hero({ onNavigate }: HeroProps) {
         />
       </motion.div>
     </div>
-  );
+  )
 }
